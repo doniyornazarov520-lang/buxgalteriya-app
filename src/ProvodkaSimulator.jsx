@@ -1,8 +1,18 @@
 import React, { useState } from 'react';
 import simulatorTasks from './simulatorData.json';
 
+const styles = {
+  container: { marginTop: '10px' },
+  subTitle: { fontSize: '14px', color: '#555' },
+  taskCard: { backgroundColor: '#fdfdfd', border: '1px solid #e2e8f0', padding: '15px', borderRadius: '8px', marginBottom: '15px' },
+  taskText: { fontSize: '15px', color: '#2d3748' },
+  inputGroup: { display: 'flex', gap: '15px', margin: '15px 0', flexWrap: 'wrap' },
+  input: { display: 'block', marginTop: '5px', padding: '8px', borderRadius: '4px', border: '1px solid #cbd5e0', width: '150px' },
+  checkBtn: { backgroundColor: '#4c51bf', color: '#fff', padding: '8px 16px', border: 'none', borderRadius: '4px', cursor: 'pointer' },
+  resultBox: { marginTop: '15px', padding: '12px', borderRadius: '6px' }
+};
+
 function ProvodkaSimulator({ currentLessonId }) {
-  // Faqat joriy darsga mos keladigan yoki barcha masalalarni tanlash
   const tasks = simulatorTasks.filter(t => t.lesson_id === currentLessonId);
 
   const [debitInput, setDebitInput] = useState('');
@@ -99,7 +109,7 @@ function ProvodkaSimulator({ currentLessonId }) {
                 {!res.isSuccess && (
                   <ul>
                     {!res.isDebitCorrect && <li>Debet scheti noto'g'ri (To'g'risi: {task.correct_debit})</li>}
-                    {!res.isCreditCorrect && <li>Kredit scheti noto'g me'yorida (To'g'risi: {task.correct_credit})</li>}
+                    {!res.isCreditCorrect && <li>Kredit scheti noto'g'ri (To'g'risi: {task.correct_credit})</li>}
                     {!res.isAmountCorrect && <li>Summa noto'g'ri kiritildi</li>}
                   </ul>
                 )}
@@ -112,16 +122,5 @@ function ProvodkaSimulator({ currentLessonId }) {
     </div>
   );
 }
-
-const styles = {
-  container: { marginTop: '10px' },
-  subTitle: { fontSize: '14px', color: '#555' },
-  taskCard: { backgroundColor: '#fdfdfd', border: '1px solid #e2e8f0', padding: '15px', borderRadius: '8px', marginBottom: '15px' },
-  taskText: { fontSize: '15px', color: '#2d3748' },
-  inputGroup: { display: 'flex', gap: '15px', margin: '15px 0', flexWrap: 'wrap' },
-  input: { display: 'block', marginTop: '5px', padding: '8px', borderRadius: '4px', border: '1px solid #cbd5e0', width: '150px' },
-  checkBtn: { backgroundColor: '#4c51bf', color: '#fff', padding: '8px 16px', border: 'none', borderRadius: '4px', cursor: 'pointer' },
-  resultBox: { marginTop: '15px', padding: '12px', borderRadius: '6px' }
-};
 
 export default ProvodkaSimulator;
