@@ -5,3 +5,4 @@ import ProvodkaSimulator from './ProvodkaSimulator';
 <div style={styles.card}>
   <ProvodkaSimulator currentLessonId={selectedLesson.id} />
 </div>
+export default App
