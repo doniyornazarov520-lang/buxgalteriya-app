@@ -4,10 +4,10 @@ import ProvodkaSimulator from './ProvodkaSimulator.jsx'
 function App() {
   const [currentLessonId, setCurrentLessonId] = useState(1);
 
-  // Ссылка на видео для каждого урока (замените ссылки на свои)
+  // Darslar uchun video havolalari (YouTube embed)
   const lessonVideos = {
-    1: "https://www.youtube.com/embed/dQw4w9WgXcQ", // 1-Dars видеосы
-    2: "https://www.youtube.com/embed/dQw4w9WgXcQ"  // 2-Dars видеосы
+    1: "https://www.youtube.com/embed/dQw4w9WgXcQ", // 1-Dars videosi
+    2: "https://www.youtube.com/embed/dQw4w9WgXcQ"  // 2-Dars videosi
   };
 
   return (
@@ -44,10 +44,10 @@ function App() {
         </button>
       </div>
 
-      {/* Блок с видеоуроком */}
+      {/* Video pleyer bo'limi */}
       <div style={{ marginBottom: '30px' }}>
         <h3>📹 {currentLessonId}-Dars Videosi</h3>
-        <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden', borderRadius: '8px' }}>
+        <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden', borderRadius: '8px', backgroundColor: '#000' }}>
           <iframe
             src={lessonVideos[currentLessonId]}
             title={`${currentLessonId}-Dars Videosi`}
