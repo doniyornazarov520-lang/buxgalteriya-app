@@ -4,6 +4,12 @@ import ProvodkaSimulator from './ProvodkaSimulator.jsx'
 function App() {
   const [currentLessonId, setCurrentLessonId] = useState(1);
 
+  // Ссылка на видео для каждого урока (замените ссылки на свои)
+  const lessonVideos = {
+    1: "https://www.youtube.com/embed/dQw4w9WgXcQ", // 1-Dars видеосы
+    2: "https://www.youtube.com/embed/dQw4w9WgXcQ"  // 2-Dars видеосы
+  };
+
   return (
     <div style={{ padding: '20px', fontFamily: 'sans-serif', maxWidth: '800px', margin: '0 auto' }}>
       <h1>Buxgalteriya Darslari va Simulyator</h1>
@@ -36,6 +42,20 @@ function App() {
         >
           2-Dars
         </button>
+      </div>
+
+      {/* Блок с видеоуроком */}
+      <div style={{ marginBottom: '30px' }}>
+        <h3>📹 {currentLessonId}-Dars Videosi</h3>
+        <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden', borderRadius: '8px' }}>
+          <iframe
+            src={lessonVideos[currentLessonId]}
+            title={`${currentLessonId}-Dars Videosi`}
+            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
       </div>
 
       <hr style={{ margin: '20px 0', border: '0.5px solid #eee' }} />
