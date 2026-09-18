@@ -6,8 +6,8 @@ function App() {
 
   // Darslar uchun video havolalari (YouTube embed)
   const lessonVideos = {
-    1: "https://www.youtube.com/embed/dQw4w9WgXcQ", // 1-Dars videosi
-    2: "https://www.youtube.com/embed/dQw4w9WgXcQ"  // 2-Dars videosi
+    1: "https://youtu.be/thmFcgFxUaM?si=CLI5IpOe1dLr1sVu", // 1-Dars videosi
+    2: "https://youtu.be/R4boj3wqVYk?si=w25KJB74J4RlTcpO"  // 2-Dars videosi
   };
 
   return (
